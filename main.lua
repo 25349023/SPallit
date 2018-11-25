@@ -290,8 +290,10 @@ local function nextView()
         reachEnd = true
     end
     
-    transition.moveBy(ball, 
-        { time=750, x=-sa, transition=easing.outSine })
+    transition.to(ball, 
+        { time=750, x=ball.x-sa, transition=easing.outSine })
+    --transition.moveBy(ball, 
+       -- { time=750, x=-sa, transition=easing.outSine })
     for i = 1, #grounds do
         transition.moveBy(grounds[i], 
             { time=750, x=-sa, transition=easing.outSine })
